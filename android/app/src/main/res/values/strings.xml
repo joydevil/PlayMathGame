@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PlayMathGame</string>
+    <string name="title_activity_main">PlayMathGame</string>
+    <string name="package_name">com.playmath.game</string>
+    <string name="custom_url_scheme">com.playmath.game</string>
+</resources>

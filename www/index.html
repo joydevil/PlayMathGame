@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Игровой Центр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div id="sticker-layer"></div><div id="prize-modal"><div class="prize-cards"></div></div>
+    <div id="hub-screen" class="screen active">
+        <h1 class="hub-title">ВЫБЕРИ ИГРУ</h1>
+        <div class="hub-grid">
+            <button class="game-card card-kids" onclick="openGame('kids')">
+                <div class="card-icon">🔤🔺</div>
+                <div class="card-name">Азбука и Фигуры</div>
+                <div class="card-desc">Слова, цифры, цвета и формы</div>
+            </button>
+            <button class="game-card card-chill" onclick="openGame('chill')">
+                <div class="card-icon">🎈➕</div>
+                <div class="card-name">Весёлые Шарики</div>
+                <div class="card-desc">Собирай шары и решай примеры</div>
+            </button>
+            <button class="game-card card-hard" onclick="openGame('hard')">
+                <div class="card-icon">🎱💥</div>
+                <div class="card-name">Хардкор Бильярд</div>
+                <div class="card-desc">Проверка мозга на скорость</div>
+            </button>
+        </div>
+    </div>
+
+    <div id="screen-kids" class="screen">
+        <div class="top-nav">
+            <button class="btn-back" onclick="goHome()">⬅ Меню</button>
+            <button class="tab-btn" id="btn-mix" onclick="setKidsTab('mix', this)" style="font-size:3.5vmin;padding:0.8vmin 2vmin;">🎲</button>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="setKidsTab('words', this)">Слова</button>
+                <button class="tab-btn" onclick="setKidsTab('numbers', this)">Цифры</button>
+                <button class="tab-btn" onclick="setKidsTab('shapes', this)">Фигуры</button><button class="tab-btn" onclick="setKidsTab('pyramid', this)">Пирамидка</button>
+            </div>
+        </div>
+        <div id="kids-board"></div>
+    </div>
+
+    <div id="screen-balls" class="screen">
+        <div class="top-nav">
+            <button class="btn-back" onclick="goHome()">⬅ Меню</button>
+            <div class="stat">Счёт: <span id="b-score">0</span></div>
+            <div id="b-lives" class="lives">❤️❤️❤️❤️❤️</div>
+        </div>
+        <div id="table"></div>
+        <div id="calc-overlay">
+            <div id="calculator">
+                <div id="calc-timer-bar"></div>
+                <div id="calc-display">0 + 0 = ?</div>
+                <div id="calc-keyboard"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="end-overlay">
+        <div class="end-box">
+            <h2 id="end-title">ПОБЕДА!</h2>
+            <p id="end-stats">Счёт: 0</p>
+            <button id="btn-continue" class="btn-main" style="background:#3b82f6;margin-bottom:2vmin;" onclick="continueBallsGame()">Продолжить ▶</button><button class="btn-main" onclick="goHome()">В главное меню</button>
+        </div>
+    </div>
+
+    <script src="sound.js"></script>
+    <script src="fx.js"></script>`n    <script src="pyr-fx.js"></script>`n    <script src="stickers.js"></script>
+    <script src="game-kids.js"></script>
+    <script src="game-balls.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
